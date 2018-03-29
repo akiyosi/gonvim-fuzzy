@@ -125,7 +125,10 @@ endfunction
 
 " query, [[ag options], options]
 function! gonvim_fuzzy#ag(query, ...)
-  let s:cmd = printf('%s "%s"', "ag --nogroup --column --nocolor", a:query)
+  if !exists("g:gonvim_fuzzy_ag_cmd")
+    let g:gonvim_fuzzy_ag_cmd = 'ag --nogroup --column --nocolor'
+  endif
+  let s:cmd = printf('%s "%s"', g:gonvim_fuzzy_ag_cmd, a:query)
   return gonvim_fuzzy#run({
               \ 'source': s:cmd,
               \ 'function': 's:ag_handler',
