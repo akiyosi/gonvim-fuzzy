@@ -1,4 +1,4 @@
-// +build !windows
+// +build windows
 
 package fzf
 
@@ -8,12 +8,14 @@ import (
 	"os"
 	"os/exec"
 	"os/user"
+ "syscall"
 	"path/filepath"
 	"reflect"
 	"strings"
 	"sync"
 	"time"
 
+ "./runproc"
 	"github.com/junegunn/fzf/src/algo"
 	"github.com/junegunn/fzf/src/util"
 	"github.com/neovim/go-client/nvim"
@@ -353,6 +355,8 @@ func (s *Fuzzy) processSource() {
 		}()
 	case string:
 		cmd := exec.Command("bash", "-c", src)
+  cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+  runproc.Prepare(cmd)
 		stdout, _ := cmd.StdoutPipe()
 		output := ""
 		go func() {
