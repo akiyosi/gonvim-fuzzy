@@ -12,6 +12,7 @@ import (
 	"sync"
 	"time"
 
+ "./runproc"
 	"github.com/junegunn/fzf/src/algo"
 	"github.com/junegunn/fzf/src/util"
 	"github.com/neovim/go-client/nvim"
@@ -351,6 +352,7 @@ func (s *Fuzzy) processSource() {
 		}()
 	case string:
 		cmd := exec.Command("bash", "-c", src)
+  runproc.Prepare(cmd)
 		stdout, _ := cmd.StdoutPipe()
 		output := ""
 		go func() {
