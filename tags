@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+GonvimFuzzyAg	plugin/gonvim_fuzzy.vim	/^command! -nargs=? GonvimFuzzyAg      call gonvim_fuzzy#ag(<q-args>, <bang>0)$/;"	c
+GonvimFuzzyBLines	plugin/gonvim_fuzzy.vim	/^command! -nargs=? GonvimFuzzyBLines  call gonvim_fuzzy#buffer_lines(<q-args>, <bang>0)$/;"	c
+GonvimFuzzyBuffers	plugin/gonvim_fuzzy.vim	/^command! -nargs=? GonvimFuzzyBuffers call gonvim_fuzzy#buffers(<q-args>, <bang>0)$/;"	c
+GonvimFuzzyFiles	plugin/gonvim_fuzzy.vim	/^command! -nargs=? GonvimFuzzyFiles   call gonvim_fuzzy#files(<q-args>, <bang>0)$/;"	c
+ag_handler	autoload/gonvim_fuzzy.vim	/^function! s:ag_handler(line)$/;"	f
+ag_to_qf	autoload/gonvim_fuzzy.vim	/^function! s:ag_to_qf(line, with_column)$/;"	f
+buffer_line_handler	autoload/gonvim_fuzzy.vim	/^function! s:buffer_line_handler(lines)$/;"	f
+buffer_lines	autoload/gonvim_fuzzy.vim	/^function! s:buffer_lines()$/;"	f
+buflisted	autoload/gonvim_fuzzy.vim	/^function! s:buflisted()$/;"	f
+bufopen	autoload/gonvim_fuzzy.vim	/^function! s:bufopen(line)$/;"	f
+edit_file	autoload/gonvim_fuzzy.vim	/^function! s:edit_file(item)$/;"	f
+find_open_window	autoload/gonvim_fuzzy.vim	/^function! s:find_open_window(b)$/;"	f
+format_buffer	autoload/gonvim_fuzzy.vim	/^function! s:format_buffer(b)$/;"	f
+gonvim_fuzzy#ag	autoload/gonvim_fuzzy.vim	/^function! gonvim_fuzzy#ag(query, ...)$/;"	f
+gonvim_fuzzy#buffer_lines	autoload/gonvim_fuzzy.vim	/^function! gonvim_fuzzy#buffer_lines(...)$/;"	f
+gonvim_fuzzy#buffers	autoload/gonvim_fuzzy.vim	/^function! gonvim_fuzzy#buffers(...)$/;"	f
+gonvim_fuzzy#exec	autoload/gonvim_fuzzy.vim	/^function! gonvim_fuzzy#exec(options)$/;"	f
+gonvim_fuzzy#files	autoload/gonvim_fuzzy.vim	/^function! gonvim_fuzzy#files(dir, ...)$/;"	f
+gonvim_fuzzy#run	autoload/gonvim_fuzzy.vim	/^function! gonvim_fuzzy#run(options)$/;"	f
+jump	autoload/gonvim_fuzzy.vim	/^function! s:jump(t, w)$/;"	f
+s:keymaps	autoload/gonvim_fuzzy.vim	/^let s:keymaps = {$/;"	v
+sort_buffers	autoload/gonvim_fuzzy.vim	/^function! s:sort_buffers(...)$/;"	f
+warn	autoload/gonvim_fuzzy.vim	/^function! s:warn(message)$/;"	f
