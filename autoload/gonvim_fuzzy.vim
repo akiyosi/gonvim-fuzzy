@@ -42,7 +42,7 @@ function! gonvim_fuzzy#exec(options)
     let s:arg = a:options.arg
     if has_key(a:options, 'function')
         let s:f = function(a:options.function)
-        echo s:f(s:arg)
+        call s:f(s:arg)
     endif
 endfunction
 
