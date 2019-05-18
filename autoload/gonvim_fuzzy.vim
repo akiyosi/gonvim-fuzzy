@@ -38,6 +38,29 @@ function! gonvim_fuzzy#run(options)
     endwhile
 endfunction
 
+function! gonvim_fuzzy#resume()
+    call rpcnotify(0, "GonvimFuzzy", "resume")
+    while v:true
+        let s:input = getchar()
+        let s:char = nr2char(s:input)
+
+        let event = get(s:keymaps, s:char, 'noevent')
+        if (s:input is# "\<BS>")
+            call rpcnotify(0, "GonvimFuzzy", "backspace")
+        elseif (s:input is# "\<DEL>")
+            call rpcnotify(0, "GonvimFuzzy", "del")
+        elseif (event == "noevent")
+            call rpcnotify(0, "GonvimFuzzy", "char", s:char)
+        else
+            call rpcnotify(0, "GonvimFuzzy", event)
+        endif
+
+        if (event == "cancel") || (event == "confirm")
+            return
+        endif
+    endwhile
+endfunction
+
 function! gonvim_fuzzy#exec(options)
     let s:arg = a:options.arg
     if has_key(a:options, 'function')
